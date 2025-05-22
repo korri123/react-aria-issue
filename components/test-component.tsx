@@ -13,7 +13,7 @@ import {
 } from 'react-aria-components'
 
 export function TestComponent() {
-    const isSSR = useIsSSR()
+    const isSSR = useIsSSR() // or, React['useSyncExternalStore'](subscribe, getSnapshot, getServerSnapshot)
     return (
         <Virtualizer layout={TableLayout}>
             <Table>
@@ -34,13 +34,4 @@ export function TestComponent() {
             </Table>
         </Virtualizer>
     )
-}
-
-export function Provider(props: {
-    children: React.ReactNode,
-    locale: string,
-}) {
-    return <div>
-        {props.children}
-    </div>
 }
