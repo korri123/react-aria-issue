@@ -1,6 +1,3 @@
-import { ThemeProvider } from "@/components/providers";
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,9 +6,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

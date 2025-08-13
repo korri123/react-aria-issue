@@ -1,35 +1,49 @@
 'use client'
 import React from 'react'
-import { useIsSSR } from 'react-aria'
 import {
-    Cell,
-    Column,
-    Row,
+    Label,
     Table,
-    TableBody,
     TableHeader,
-    TableLayout,
-    Virtualizer,
-} from 'react-aria-components'
+    Column,
+    TableBody,
+    Row, Cell, Virtualizer, TableLayout
+} from 'react-aria-components';
+
 
 export function TestComponent() {
-    const isSSR = useIsSSR() // or, React['useSyncExternalStore'](subscribe, getSnapshot, getServerSnapshot)
     return (
         <Virtualizer layout={TableLayout}>
             <Table>
                 <TableHeader>
-                    <Column>1</Column>
-                    <Column>2</Column>
-                    <Column />
+                    <Column>
+                        <Label>Selected</Label>
+                    </Column>
+                    <Column>
+                        <Label>Name</Label>
+                    </Column>
+                    <Column>
+                        <Label>Year</Label>
+                    </Column>
+                    <Column isRowHeader>
+                        <Label>Age</Label>
+                    </Column>
                 </TableHeader>
-                <TableBody items={[{ id: 1 }]}>
-                    {(row) => (
-                        <Row key={row.id}>
-                            <Cell></Cell>
-                            <Cell></Cell>
-                            <Cell></Cell>
-                        </Row>
-                    )}
+                <TableBody>
+                    <Row>
+                        <Cell>
+                            ding
+                        </Cell>
+                        <Cell>
+                            John
+                        </Cell>
+                        <Cell>
+                            1998
+                        </Cell>
+                        <Cell>
+                            27
+                        </Cell>
+                    </Row>
+
                 </TableBody>
             </Table>
         </Virtualizer>
